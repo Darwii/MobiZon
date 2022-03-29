@@ -1,4 +1,5 @@
 ﻿using DomainLayer.Users;
+using Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,10 +8,17 @@ namespace BusinessObjectLayer.User
 {
     public class UserCreate : IUserCreate
     {
-        
-        public void AddUserRegistration(UserRegistration entity)
+        ProductDbContext _userContext;
+        IRepositoryOperations<UserRegistration> _userRepo;
+        public UserCreate(ProductDbContext userContext)
         {
-            throw new NotImplementedException();
+            _userContext = userContext;
+            _userRepo = new RepositoryOperations<UserRegistration>(userContext);
+        }
+        public void AddUserRegistration(UserRegistration user)
+        {
+            _userRepo.Add(user);
+            _userRepo.Save();
         }
     }
 }
