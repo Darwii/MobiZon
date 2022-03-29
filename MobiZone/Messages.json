@@ -10,5 +10,13 @@
       "ProductDeltedError": "Error occured during Product Deletion",
       "ProductDuplicateData": "Entered Data is Already exist"
     }
+  ],
+  "Users": [
+    {
+      "UserAdded": "Successfully added new user",
+      "UserAddedError": "Error occured while adding user",
+      "ProductDuplicateData": "Entered Data Already exist"
+    }
   ]
+
 }

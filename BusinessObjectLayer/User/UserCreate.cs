@@ -13,7 +13,7 @@ namespace BusinessObjectLayer.User
         public UserCreate(ProductDbContext userContext)
         {
             _userContext = userContext;
-            _userRepo = new RepositoryOperations<UserRegistration>(userContext);
+            _userRepo = new RepositoryOperations<UserRegistration>(_userContext);
         }
         public void AddUserRegistration(UserRegistration user)
         {

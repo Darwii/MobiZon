@@ -1,4 +1,5 @@
 using BusinessObjectLayer;
+using BusinessObjectLayer.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,6 +38,7 @@ namespace MobiZone
             services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
             /*services.AddScoped(typeof(IRepositoryOperations<>), typeof(RepositoryOperations<>));*/
             services.AddScoped(typeof(IProductCatalog), typeof(ProductCatalog));
+            services.AddScoped(typeof(IUserCreate), typeof(UserCreate));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

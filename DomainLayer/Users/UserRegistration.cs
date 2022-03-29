@@ -21,12 +21,12 @@ namespace DomainLayer.Users
         public string Email { get; set; }
         [Required(ErrorMessage = "This Field is Required")]
         [Display(Name = "Password")]
-        [Compare("ConfirmPassword")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [Required(ErrorMessage = "This Field is Required")]
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
+        [Compare("Password")]
         public string ConfirmPassword { get; set; }
     }
 }
